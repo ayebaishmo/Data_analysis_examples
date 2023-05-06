@@ -43,5 +43,22 @@ a = np.array([(10,),(20,),(30,)], dtype=dt)
 print(a['age'])"""
 
 # Structured datatype
-student=np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
-print(student)
+"""student=np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
+print(student)"""
+
+
+"""student=np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
+a = np.array([('abc', 21, 50),('xyz', 18,75)], dtype=student)
+print(a)"""
+
+# Array attributes
+# This array attribute can return a tuple consisting of array dimensions. It can also be used to resize the array
+
+"""a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+b = a.shape
+print(b)"""
+
+# Resizing the ndarray
+a = np.array([[2,3,4],[4,5,6]])
+b = a.shape = (3,2)
+print(a)
