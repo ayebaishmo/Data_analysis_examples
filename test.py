@@ -28,3 +28,6 @@ print(dt)
 dt = np.dtype('>i4')
 print(dt)
 
+# Structured data type
+dt = np.dtype([('age', np.int8)])
+print(dt)
