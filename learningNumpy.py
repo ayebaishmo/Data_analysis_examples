@@ -37,7 +37,11 @@ print(dt)"""
 q = np.array([(10,),(20,),(30)], dtype=dt)
 print(q)"""
 
-# file name can be used to access content of age column
-dt = np.dtype([('age', np.int8)])
+# File name can be used to access content of age column
+"""dt = np.dtype([('age', np.int8)])
 a = np.array([(10,),(20,),(30,)], dtype=dt)
-print(a['age'])
+print(a['age'])"""
+
+# Structured datatype
+student=np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
+print(student)
