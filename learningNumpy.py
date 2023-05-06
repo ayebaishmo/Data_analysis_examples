@@ -59,6 +59,11 @@ b = a.shape
 print(b)"""
 
 # Resizing the ndarray
-a = np.array([[2,3,4],[4,5,6]])
-b = a.shape = (3,2)
-print(a)
+"""a = np.array([[2,3,4],[4,5,6]])
+a.shape = (3,2)
+print(a)"""
+
+# Numpy also provides reshape function to resize an array
+a = np.array([[1,2,3],[4,5,6]])
+b = a.reshape(3,2)
+print(b)
