@@ -10,25 +10,39 @@ print(a)"""
 # More than one dimension
 """b = np.array([[1,2],[4,5]])
 print(b)"""
+"""----------------------------------------------------------------"""
 
-"""In NumPy, the minimum dimension refers to the smallest number of dimensions required to represent an array.
 
-For example, a 1-dimensional array (also known as a vector) has a minimum dimension of 1, a 2-dimensional array (also known as a matrix) has a minimum dimension of 2, and so on.
-
-When creating an array in NumPy, the minimum dimension can be specified using the ndmin parameter. By default, ndmin is set to 0, which means that NumPy will infer the minimum dimension based on the input data. However, ndmin can be set to a higher value to ensure that the resulting array has at least the specified number of dimensions.
-
-Here's an example of creating an array with a minimum dimension of 2:"""
-# Minimum dimension
-
-"""c = np.array([1,2,3,4,5], ndmin = 2)
-print(c)"""
 
 #dtype paramenter
+"""In NumPy, the dtype (short for "data type") parameter specifies the data type of the elements in an array. The data type determines how the elements are stored in memory and the operations that can be performed on them.
+
+NumPy provides a wide range of data types, including numeric types (such as int, float, and complex), boolean types (bool), string types (str), and more. Each data type has a corresponding character code that can be used to specify the dtype parameter. For example, the character code 'i' specifies a signed integer, 'f' specifies a floating-point number, and 'c' specifies a complex number.
+
+Here's an example of creating an array with a specific data type:"""
 """
 d = np.array([1,2,3], dtype=complex)
 print(d)"""
 
+"""# create a 1-dimensional array of integers
+a = np.array([1, 2, 3], dtype='i')
+
+# create a 1-dimensional array of complex numbers
+b = np.array([1+2j, 3+4j], dtype='c')
+
+# create a 1-dimensional array of strings
+c = np.array(['foo', 'bar', 'baz'], dtype='str')"""
+"""-----------------------------------------------------------------"""
+
+
 # DATA TYPE OBJECTS (dtype)
+"""In NumPy, data type objects (or dtype objects) are a fundamental part of the library. They are used to specify the data type of elements in arrays, as well as to define the layout of structured arrays.
+
+A dtype object contains information about the type of the data (e.g., integer, floating point, complex), the number of bytes required to store each element of the data type, the byte order (little-endian or big-endian), and other properties such as whether the data type is signed or unsigned.
+
+NumPy provides a wide range of data type objects, including integer types (such as int8, int16, and int64), floating-point types (such as float32 and float64), complex types (such as complex64 and complex128), and others.
+
+Here's an example of creating a dtype object and using it to define the data type of an array:"""
 """dt = np.dtype(np.int32)
 print(dt)"""
 
@@ -41,7 +55,7 @@ print(dt)"""
 print(dt)"""
 
 # Structured data type
-"""# dt = np.dtype([('age', np.int8)])
+"""dt = np.dtype([('age', np.int8)])
 print(dt)"""
 
 # Applying it in ndarray object
@@ -62,6 +76,16 @@ print(student)"""
 """student=np.dtype([('name','S20'), ('age', 'i1'), ('marks', 'f4')])
 a = np.array([('abc', 21, 50),('xyz', 18,75)], dtype=student)
 print(a)"""
+
+"""mydtype = np.dtype([('name', 'S10'), ('age', 'i')])
+
+a = np.array([('Alice', 25), ('Bob', 30), ('Charlie', 35)], dtype=mydtype)
+
+print(a['name'])"""
+"""In this example, we have defined a custom dtype object with two fields: a string field called 'name' with a maximum length of 10 characters ('S10'), and an integer field called 'age' ('i'). We have then used this custom dtype to create a structured array with three elements, where each element contains a name and an age. The 'name' field can be accessed using the ['name'] syntax, which returns an array of bytes representing the string values."""
+"""-----------------------------------------------------------"""""
+
+
 
 # Array attributes
 # This array attribute can return a tuple consisting of array dimensions. It can also be used to resize the array
