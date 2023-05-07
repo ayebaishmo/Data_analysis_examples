@@ -88,29 +88,92 @@ print(a['name'])"""
 
 
 # Array attributes
-# This array attribute can return a tuple consisting of array dimensions. It can also be used to resize the array
 
-"""a = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
-b = a.shape
-print(b)"""
+"""In NumPy, array attributes are properties of NumPy arrays that provide information about the array's shape, size, data type, and other characteristics. Here are some common array attributes in NumPy:
 
-# Resizing the ndarray
-"""a = np.array([[2,3,4],[4,5,6]])
-a.shape = (3,2)
-print(a)"""
+shape: This attribute returns a tuple that specifies the dimensions of the array. For example, if a is a 2D array with shape (3, 4), a.shape will return (3, 4).
 
-# Numpy also provides reshape function to resize an array
-"""a = np.array([[1,2,3],[4,5,6]])
-b = a.reshape(3,2)
-print(b)"""
+ndim: This attribute returns the number of dimensions of the array. For example, if a is a 2D array, a.ndim will return 2.
 
-# This array attribute returns the number of array dimension
-"""a = np.arange(24)
-print(a)"""
+size: This attribute returns the total number of elements in the array. For example, if a is a 2D array with shape (3, 4), a.size will return 12.
 
-# The array above is one dimesional array
-# Below we are reshaping it
+dtype: This attribute returns the data type of the elements in the array. For example, if a is an array of 32-bit integers, a.dtype will return int32.
 
-"""a.ndim
-b = a.reshape(2,4,3)
-print(b)"""
+itemsize: This attribute returns the number of bytes required to store each element of the array. For example, if a is an array of 32-bit integers, a.itemsize will return 4.
+
+data: This attribute returns a buffer containing the actual elements of the array. For example, if a is an array, a.data will return a buffer object that provides access to the memory buffer containing the array's elements."""
+
+# Here's an example that demonstrates some of these attributes:
+
+"""a = np.array([[1,2,3], [4,5,6]], dtype=np.int32)
+print(a.shape)
+print(a.ndim)
+print(a.size)
+print(a.dtype)
+print(a.itemsize)
+print(a.data)
+"""
+"""In this example, we have created a 2D array a with shape (2, 3) and 
+data type int32. We have then printed out several of its attributes using the dot notation."""
+"""------------------------------------------------------------------------------"""
+
+
+# Functions and methods in numpy 
+"""NumPy provides a wide range of functions and methods that allow you to perform various operations on arrays and matrices. Here are some of the most commonly used functions and methods in NumPy:
+
+Creation Functions: NumPy provides several functions for creating arrays of various shapes and sizes, including:
+
+np.array(): Creates an array from a list or tuple.
+
+np.zeros(): Creates an array filled with zeros.
+
+np.ones(): Creates an array filled with ones.
+
+np.empty(): Creates an array without initializing its values.
+
+np.arange(): Creates an array with a range of values.
+
+np.linspace(): Creates an array with a specified number of evenly spaced values between two endpoints.
+
+Array Manipulation Functions: NumPy provides several functions for manipulating arrays, including:
+
+np.reshape(): Reshapes an array into a new shape.
+
+np.transpose(): Transposes an array.
+
+np.concatenate(): Concatenates two or more arrays.
+
+np.split(): Splits an array into multiple sub-arrays.
+
+Mathematical Functions: NumPy provides several mathematical functions that operate on arrays, including:
+
+np.sum(): Calculates the sum of an array.
+
+np.mean(): Calculates the mean of an array.
+
+np.std(): Calculates the standard deviation of an array.
+
+np.max(): Finds the maximum value in an array.
+
+np.min(): Finds the minimum value in an array.
+
+np.exp(): Calculates the exponential of an array.
+
+np.log(): Calculates the natural logarithm of an array.
+
+np.dot(): Calculates the dot product of two arrays.
+
+Linear Algebra Functions: NumPy provides several functions for linear algebra operations, including:
+
+np.linalg.inv(): Calculates the inverse of a matrix.
+
+np.linalg.det(): Calculates the determinant of a matrix.
+
+np.linalg.eig(): Calculates the eigenvalues and eigenvectors of a matrix.
+
+np.linalg.solve(): Solves a system of linear equations.
+
+np.linalg.norm(): Calculates the norm of a matrix or vector.
+
+These are just a few examples of the many functions and methods provided by NumPy. 
+For a more comprehensive list of functions and methods, you can refer to the NumPy documentation."""
