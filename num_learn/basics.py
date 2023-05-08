@@ -43,3 +43,70 @@ print(k)"""
 
 """--------------------------------------------------------------------------------"""
 
+# ADDING REMOVING AND SORTING ELEMENTS
+# This section covers np.sort(), np.concatenate()
+# Sorting an element is simple with np.sort(). You can specify the axis, kind, and order when you call the function.
+"""arr = np.array([2,8,1,3,8,6,0,4])
+sortedarr = np.sort(arr)
+print(sortedarr)"""
+
+# Concatenating the array
+"""a = np.array([1,2,3,4,5])
+b = np.array([7,8,9,10])
+c = np.concatenate((a,b))
+print(c)"""
+
+# Concatnate with dimension array
+"""a = np.array([[1,2,3],[7,8,9]])
+b = np.array([[4,5,6]])
+c = np.concatenate((a,b), axis = 0)
+print(c)"""
+
+
+# HOW DO YOU KNOW THE SHAPE AND SIZE OF AN ARRAY
+"""This section covers ndarray.ndim, ndarray.size, ndarray.shape
+
+ndarray.ndim will tell you the number of axes, or dimensions, of the array.
+
+ndarray.size will tell you the total number of elements of the array. This is the product of the elements of the array’s shape.
+
+ndarray.shape will display a tuple of integers that indicate the number of elements stored along each dimension of the array. If, for example, you have a 2-D array with 2 rows and 3 columns, the shape of your array is (2, 3)."""
+
+"""arr = np.array([
+                [[0,1,2,3],
+                 [4,5,6,7]],
+
+                [[8,9,10,11],
+                 [12,13,14,15]],
+
+                [[16,18,19,20],
+                 [21,22,23,24]],
+            ])
+print(arr)"""
+
+# To find the number od dimension
+"""x = arr.ndim
+print(x)"""
+
+# To find the total number of elements in the array
+"""y = arr.size
+print(y)"""
+
+# Find the shape pf the array
+"""z = arr.shape
+print(z)"""
+
+# CAN YOU RESHAPE AN ARRAY
+"""This section covers arr.reshape()
+Yes!
+Using arr.reshape() will give a new shape to an array without changing the data. 
+Just remember that when you use the reshape method, the array you want to produce 
+needs to have the same number of elements as the original array. If you start with an array 
+with 12 elements, you’ll need to make sure that your new array also has a total of 12 elements."""
+               
+"""a = np.arange(6)
+b = a.reshape(3,2)
+print(b)"""
+
+
+# HOW TO CONVERT 1D ARRAY INTO A 2D ARRAY (HOW TO A NEW AXIS TO AN ARRAY)
