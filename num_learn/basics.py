@@ -110,3 +110,13 @@ print(b)"""
 
 
 # HOW TO CONVERT 1D ARRAY INTO A 2D ARRAY (HOW TO A NEW AXIS TO AN ARRAY)
+"""This section covers np.newaxis, np.expand_dims
+
+You can use np.newaxis and np.expand_dims to increase the dimensions of your existing array.
+
+Using np.newaxis will increase the dimensions of your array by one dimension when used once. 
+This means that a 1D array will become a 2D array, a 2D array will become a 3D array, and so on."""
+
+a = np.array([1,2,3,4,5,6])
+# Lets find out the shape of the array
+print(a.shape)
