@@ -117,6 +117,33 @@ You can use np.newaxis and np.expand_dims to increase the dimensions of your exi
 Using np.newaxis will increase the dimensions of your array by one dimension when used once. 
 This means that a 1D array will become a 2D array, a 2D array will become a 3D array, and so on."""
 
-a = np.array([1,2,3,4,5,6])
+"""a = np.array([1,2,3,4,5,6])
 # Lets find out the shape of the array
-print(a.shape)
+print(a.shape)"""
+
+# we can use np.newaxis to add a new axis
+"""a2 = a[np.newaxis, :]
+print(a2.shape)"""
+
+"""You can explicitly convert a 1D array with either a row vector or a column vector using np.newaxis. 
+For example, you can convert a 1D array to a row vector by inserting an axis along the first dimension:"""
+
+"""row_vector = a[np.newaxis, :]
+print(row_vector.shape)"""
+
+
+# Or, for a column vector, you can insert an axis along the second dimension:
+"""col_vector = a[:, np.newaxis]
+print(col_vector.shape)"""
+
+"""You can also expand an array by inserting a new axis at a
+ specified position with np.expand_dims.
+For example, if you start with this array:"""
+
+"""b = np.expand_dims(a, axis=1)
+print(b.shape)"""
+
+# You can add an axis at index position 0 with:
+"""c = np.expand_dims(a, axis=0)
+c.shape
+(1, 6)"""
