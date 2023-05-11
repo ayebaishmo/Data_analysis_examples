@@ -107,7 +107,7 @@ with 12 elements, you’ll need to make sure that your new array also has a tota
 """a = np.arange(6)
 b = a.reshape(3,2)
 print(b)"""
-
+"""--------------------------------------------------------------------------------"""
 
 # HOW TO CONVERT 1D ARRAY INTO A 2D ARRAY (HOW TO A NEW AXIS TO AN ARRAY)
 """This section covers np.newaxis, np.expand_dims
@@ -147,3 +147,122 @@ print(b.shape)"""
 """c = np.expand_dims(a, axis=0)
 c.shape
 (1, 6)"""
+
+"""--------------------------------------------------------------------------------"""
+
+
+
+# INDEXING AND SLICING
+"""data = np.array([1,2,3])
+
+print(data[1])
+print(data[0:2])
+print(data[1:])
+print(data[-2:])"""
+
+"""You may want to take a section of your array or specific array elements to use in further analysis or additional operations. To do that, you’ll need to subset, slice, and/or index your arrays.
+
+If you want to select values from your array that fulfill certain conditions, it’s straightforward with NumPy.
+
+For example, if you start with this array:"""
+"""a = np.array([
+    [1,2,3,4],
+    [5,6,7,8],
+    [9,10,11,12]
+])"""
+#print(a)
+# You can easily print out values all that are less than five
+"""b = a[ a < 5]
+print(b)"""
+
+# You can also select numbers that are equal or greate than five
+"""c = a[a >= 5]
+print(c)"""
+
+# You cam select elements that are divisible by 2
+"""d = a[a%2==0]
+print(d)"""
+
+# Or you can select elements that satify two conditions the $ and | operators
+"""e = a[(a > 2) & (a <11)]
+print(e)"""
+
+"""You can also make use of the logical operators & and | in order to return 
+boolean values that specify whether or not the values in an array fulfill a 
+certain condition.This can be useful with arrays that contain names or other categorical values."""
+
+"""fiveUp = (a > 5) | (a==5)
+print(fiveUp)"""
+
+# You can also use np.nonzero() to select elements or indices from an array
+"""f = np.nonzero(a < 5)
+print(f)"""
+
+
+"""In this example, a tuple of arrays was returned: one for each dimension. 
+The first array represents the row indices where these values are found, and 
+the second array represents the column indices where the values are found.
+If you want to generate a list of coordinates where the elements exist, 
+you can zip the arrays, iterate over the list of coordinates, and print them. For example:"""
+"""list_of_coordinates= list(zip(a[0], a[1]))
+
+for coord in list_of_coordinates:
+    print(coord)"""
+"""-------------------------------------------------------------------"""
+
+
+# How to create an array from existing data 
+"""This section covers slicing and indexing, np.vstack(), np.hstack(), np.hsplit(), .view(), copy()
+You can easily create a new array from a section of an existing array."""
+"""a = np.array([1,2,3,4,5,6,7,8,9,10])"""
+
+# You can create a new array by deciding where you want to slice your array from 
+"""arr1 = a[3:8]
+print(arr1)"""
+
+# You can also stack two existing arrays, both vertically and horizontally
+# Let say you have two arrays ar1 ar2
+"""ar1 = np.array([[1,1],
+                [2,2]])
+ar2 = np.array([[3,3],
+                [4,4]])"""
+
+# You can stack them vertcally with vstack
+"""arrst = np.vstack((ar1, ar2))
+print(arrst)"""
+
+# Or horizontally with hstack
+"""arrst2 = np.hstack((ar1, ar2))
+print(arrst2)"""
+
+"""You can split an array into several smaller arrays using hsplit. You can specify either 
+the number of equally shaped arrays to return or the columns after which the division should occur.
+Let’s say you have this array:"""
+"""x = np.arange(1, 25).reshape(2, 12)
+print(x)"""
+
+# If you wanted to split this array into three equally shaped arrays, you would run:
+"""y = np.hsplit(x,3)
+print(y)
+"""
+# If you wantesd to split the array after the third and fourth column
+"""z = np.hsplit(x, (3, 4))
+print(z)"""
+
+"""You can use the view method to create a new array object that looks at the same data as the original array (a shallow copy).
+
+Views are an important NumPy concept! NumPy functions, as well as 
+operations like indexing and slicing, will return views whenever possible. 
+This saves memory and is faster (no copy of the data has to be made). 
+However it’s important to be aware of this - modifying data in a view also modifies the original array!"""
+
+a = np.array =  ([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+"""Now we create an array b1 by slicing a and modify the first element of b1. This will modify the corresponding element in a as well"""
+b1 = a[0:1]
+print(b1)
+b1[0] = 99
+print(a)
+
+# Using copy method will make a complete copy of the array and it's data 
+b2 = a.copy()
+print(b2)
