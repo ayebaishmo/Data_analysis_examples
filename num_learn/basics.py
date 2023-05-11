@@ -256,13 +256,66 @@ operations like indexing and slicing, will return views whenever possible.
 This saves memory and is faster (no copy of the data has to be made). 
 However it’s important to be aware of this - modifying data in a view also modifies the original array!"""
 
-a = np.array =  ([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+# a = np.array =  ([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
 """Now we create an array b1 by slicing a and modify the first element of b1. This will modify the corresponding element in a as well"""
-b1 = a[0:1]
+"""b1 = a[0:1]
 print(b1)
 b1[0] = 99
-print(a)
+print(a)"""
 
 # Using copy method will make a complete copy of the array and it's data 
-b2 = a.copy()
-print(b2)
+"""b2 = a.copy()
+print(b2)"""
+"""-------------------------------------------------------------------------------"""
+
+
+# BASIC ARRAY OPERATIONS
+"""This section covers addition, subtraction, multiplication, division, and more"""
+"""a = np.array([1,1])
+b = np.array([2,2])
+addition = a + b
+print(addition)"""
+
+# Another example
+"""data = np.array([1,2])
+ones = np.ones(2, dtype=int)
+add = data + ones
+print(add)"""
+
+# You can do more than adding
+"""sub = data - ones
+print(sub)
+mult = data * ones
+print(mult)
+divide = data / data
+print(divide)
+"""
+# If you wantfind the sum of elements in array we use sum()
+"""a = np.array([1,2,3,4])
+b = a.sum()
+print(b)"""
+
+# To add rows or columns you would have to specify the axis
+"""b = np.array([[1,1], [2,2]])
+y = b.sum(axis = 0)
+print(y)
+k = b.sum(axis = 1)
+print(k)"""
+"""--------------------------------------------------------------"""
+
+
+# BROADCASTING
+"""There are times when you might want to carry out an operation between 
+an array and a single number (also called an operation between a vector and a scalar) 
+or between arrays of two different sizes. For example, your array (we’ll call it “data”) 
+might contain information about distance in miles but you want to convert the information to kilometers."""
+data = np.array([1.0, 2.0])
+broad = data * 1.6
+print(broad)
+
+"""NumPy understands that the multiplication should happen with each cell. 
+That concept is called broadcasting. Broadcasting is a mechanism that allows 
+NumPy to perform operations on arrays of different shapes. The dimensions of 
+your array must be compatible, for example, when the dimensions of both arrays 
+are equal or when one of them is 1. If the dimensions are not compatible, you will get a ValueError"""
+
