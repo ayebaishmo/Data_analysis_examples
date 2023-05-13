@@ -346,3 +346,79 @@ each column by specifying  axis = 0"""
 
 """y = a.min(axis = 0)
 print(y)"""
+
+# CREATING MATRICES
+# You can pass Python lists of lists to create a 2-D array (or “matrix”) to represent them in NumPy.
+"""data = np.array([[1,2],[3,4],[5,6]])
+print(data)"""
+
+# Indexing and slicing are useful when manipulating matrices
+"""z = data[0,1]
+p = data[1:3]
+y = data[0:2,0]
+print(z, p , y)"""
+
+# You can aggregate matrices the same way you did with vectors
+
+"""k = data.min()
+l = data.max()
+d = data.sum()
+print(k, l, d)"""
+
+"""You can aggregate all the values in a matrix and you can aggreagate them across columns or rows
+using the axis parameter. To illustrate this point, lets look at a slightly modified data set"""
+
+"""data = np.array([[1,2],[5,3],[4,6]])
+print(data)
+
+h = data.max(axis= 0)
+f = data.max(axis= 1)
+print(h, f)"""
+
+"""Once you have created your matrices, you can add and multiply them using arithmetic operators if you have two 
+matrices that same size"""
+
+"""data = np.array([[1,2],[3,4]])
+ones = np.array([[1,1],[1,1]])
+
+addi = data + ones
+print(addi)"""
+
+"""You can also do arithmetic operation on matrices of different sizes, but only if one matrix has only
+one column or one row. In this case, Numpy will use it's broadcast rules for the operation"""
+
+"""data = np.array([[1,2],[3,4],[5,6]])
+ones_row = np.array([[1,1]])
+add = data  + ones_row
+print(add)"""
+
+"""Be aware tha numpy prints N dimensional arrays, the last axis is looped over the fatest while the first
+axis is the lowest. For instance"""
+
+"""data = np.ones((4,3,2))
+print(data)"""
+
+"""There are often instances where we want numpy to initialize the values of an array. Numpy offers fumctions
+like ones() and zeros(), and random genrator class for random number generation for that. All you need to do 
+os to pass in the number of elements you want to generate"""
+
+"""x = np.ones(3)
+print(x)
+y = np.zeros(3)
+print(y)
+
+rng = np.random.default_rng()
+p =rng.random(3)
+print(p)
+"""
+"""You cam use ones(), zeros() and ramdom() to create a 2D array if you give them a tuple describing 
+the dimensions of the matrix"""
+
+q = np.ones((3,2))
+print(q)
+k = np.zeros((3,2))
+print(k)
+
+rng = np.random.default_rng()
+R = rng.random((3,2))
+print(R)
