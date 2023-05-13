@@ -309,13 +309,40 @@ print(k)"""
 an array and a single number (also called an operation between a vector and a scalar) 
 or between arrays of two different sizes. For example, your array (we’ll call it “data”) 
 might contain information about distance in miles but you want to convert the information to kilometers."""
-data = np.array([1.0, 2.0])
+"""data = np.array([1.0, 2.0])
 broad = data * 1.6
 print(broad)
-
+"""
 """NumPy understands that the multiplication should happen with each cell. 
 That concept is called broadcasting. Broadcasting is a mechanism that allows 
 NumPy to perform operations on arrays of different shapes. The dimensions of 
 your array must be compatible, for example, when the dimensions of both arrays 
 are equal or when one of them is 1. If the dimensions are not compatible, you will get a ValueError"""
 
+"""-------------------------------------------------------------------------------------------"""
+
+
+# MORE USEFUL ARRAY OPERATIONS
+"""This section covers maximum, minimum, sum, mean, product, standard deviation, and more
+
+NumPy also performs aggregation functions. In addition to min, max, and sum, 
+you can easily run mean to get the average, prod to get the result of multiplying 
+the elements together, std to get the standard deviation, and more."""
+
+"""a = np.array([
+    [0.45053314, 0.17296777, 0.34376245, 0.5510652],
+    [0.54627315, 0.05093587, 0.40067661, 0.55645993],
+    [0.12697628, 0.82485143, 0.26590556, 0.56917101]
+])
+
+p = a.sum()
+print(p)
+
+x = a.min()
+print(x)"""
+
+"""You can specify the axis you want the aggregation to be computed Forexample you can find the minimum value within
+each column by specifying  axis = 0"""
+
+"""y = a.min(axis = 0)
+print(y)"""
