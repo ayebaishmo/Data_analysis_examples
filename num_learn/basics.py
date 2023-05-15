@@ -414,11 +414,26 @@ print(p)
 """You cam use ones(), zeros() and ramdom() to create a 2D array if you give them a tuple describing 
 the dimensions of the matrix"""
 
-q = np.ones((3,2))
+"""q = np.ones((3,2))
 print(q)
 k = np.zeros((3,2))
 print(k)
 
 rng = np.random.default_rng()
 R = rng.random((3,2))
-print(R)
+print(R)"""
+
+# GENERATING RANDOM NUMBERS
+"""The use of random number generation is an important part of the configuration 
+and evaluation of many numerical and machine learning algorithms. Whether you need to randomly 
+initialize weights in an artificial neural network, split data into random sets, or randomly shuffle 
+your dataset, being able to generate random numbers (actually, repeatable pseudo-random numbers) is essential.
+
+With Generator.integers, you can generate random integers from low (remember that this is inclusive with NumPy) to high (exclusive).
+ You can set endpoint=True to make the high number inclusive.
+
+You can generate a 2 x 4 array of random integers between 0 and 4 with:"""
+
+"""rng = np.random.default_rng()
+R = rng.integers(5, size=(2,4))
+print(R)"""
