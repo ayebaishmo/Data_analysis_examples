@@ -437,3 +437,46 @@ You can generate a 2 x 4 array of random integers between 0 and 4 with:"""
 """rng = np.random.default_rng()
 R = rng.integers(5, size=(2,4))
 print(R)"""
+"""---------------------------------------------------------------------------------------------"""
+
+# HOW TO GET UNIQUE ITEMS AND COUNTS
+# This section covers np.unique(). You can find unique elements in an array easily with np.unique
+
+"""a = np.array([11, 11, 12, 13, 14, 15, 16, 17, 12, 13, 11, 14, 18, 19, 20])
+unique_values = np.unique(a)
+# you can use np.unique to print unique values from your array
+print(unique_values)"""
+
+"""To get the indices of unique values in numpy array (an array of first index position of unique values in
+the array), just pass the return index arguement in np.values() as well as your array"""
+
+"""a = np.array([11, 11, 12, 13, 14, 15, 16, 17, 12, 13, 11, 14, 18, 19, 20])
+unique_values, indeces_list = np.unique(a, return_index=True)
+print(indeces_list)"""
+
+"""You can pass the return_counts argument in np.unique() along with your 
+array to get the frequency count of unique values in a NumPy array."""
+"""a = np.array([11, 11, 12, 13, 14, 15, 16, 17, 12, 13, 11, 14, 18, 19, 20])
+occurance_count = np.unique(a, return_counts=True)
+print(occurance_count)"""
+
+# This also works with 2D array
+"""a_2d = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[1,2,3,4]])
+unique_values = np.unique(a_2d)
+print(unique_values)"""
+
+"""If the axis argument isn’t passed, your 2D array will be flattened.
+
+If you want to get the unique rows or columns, make sure to pass the axis argument. 
+To find the unique rows, specify axis=0 and for columns, specify axis=1."""
+
+"""a_2d = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[1,2,3,4]])
+unique_rows = np.unique(a_2d, axis=0)
+print(unique_rows)"""
+
+# To get the unique rows, index position, and occurrence count, you can use:
+"""a_2d = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12],[1,2,3,4]])
+uniquerows, indeces, occurance_count = np.unique(a_2d, axis=0, return_counts=True, return_index=True)
+print(uniquerows)
+print(indeces)
+print(occurance_count)"""
