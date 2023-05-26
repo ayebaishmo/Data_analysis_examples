@@ -480,3 +480,21 @@ uniquerows, indeces, occurance_count = np.unique(a_2d, axis=0, return_counts=Tru
 print(uniquerows)
 print(indeces)
 print(occurance_count)"""
+"""--------------------------------------------------------------------------------------------------"""
+
+
+# TRANSPOSING AND RESHAPING A MATRIX
+"""This section covers arr.reshape(), arr.transpose(), arr.T
+It’s common to need to transpose your matrices. NumPy arrays have the property T
+ that allows you to transpose a matrix."""
+
+"""You may also need to switch the dimensions of a matrix. This can happen when, 
+for example, you have a model that expects a certain input shape that is different from your dataset. 
+This is where the reshape method can be useful. You simply need to pass in the new dimensions that you want for the matrix."""
+
+"""arra = np.array([1,2,3,4,5,6])
+shap = arra.reshape(3,2)
+print(shap)
+
+aga = shap.reshape(2,3)
+print(aga)"""
